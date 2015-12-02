@@ -1,0 +1,28 @@
+{
+  "name": "apiNG-plugin-jsonloader",
+  "homepage": "https://github.com/JohnnyTheTank/apiNG-plugin-jsonloader",
+  "authors": [
+    "Jonathan Hornung <jonathan.hornung@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "description": "JSON loader plugin for apiNG",
+  "main": "dist/apiNG-plugin-jsonloader.min.js",
+  "moduleType": [],
+  "keywords": [
+    "aping",
+    "jsonloader",
+    "angularjs",
+    "json"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "apiNG": "*"
+  }
+}
