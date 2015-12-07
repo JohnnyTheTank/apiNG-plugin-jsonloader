@@ -27,7 +27,6 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
 
                         jsonloaderFactory.getJsonData(request.path, request.format)
                             .success(function (_data) {
-                                //if file content is array
                                 var resultArray = [];
 
                                 if (_data.constructor !== Array) {
