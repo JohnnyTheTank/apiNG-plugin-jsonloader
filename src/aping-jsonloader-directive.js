@@ -21,24 +21,28 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
                 requests.forEach(function (request) {
 
                     if (request.path) {
-                        jsonloaderFactory.getJsonData(request.path)
+                        if (!request.format) {
+                            request.format = "json";
+                        }
+
+                        jsonloaderFactory.getJsonData(request.path, request.format)
                             .success(function (_data) {
-
                                 //if file content is array
-                                if (_data.constructor !== Array) {
-                                    return false;
-                                }
-
                                 var resultArray = [];
 
-                                if (request.items < 0) {
-                                    resultArray = _data;
+                                if (_data.constructor !== Array) {
+                                    resultArray.push(_data);
                                 } else {
-                                    angular.forEach(_data, function (value, key) {
-                                        if(key < request.items) {
-                                            resultArray.push(value);
-                                        }
-                                    });
+
+                                    if (request.items < 0) {
+                                        resultArray = _data;
+                                    } else {
+                                        angular.forEach(_data, function (value, key) {
+                                            if (key < request.items) {
+                                                resultArray.push(value);
+                                            }
+                                        });
+                                    }
                                 }
 
                                 apingController.concatToResults(resultArray);
@@ -50,8 +54,24 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
     }])
     .factory('jsonloaderFactory', ['$http', function ($http) {
         var jsonloaderFactory = {};
-        jsonloaderFactory.getJsonData = function (_jsonPath) {
-            return $http.get(_jsonPath);
+        jsonloaderFactory.getJsonData = function (_jsonPath, _format) {
+            if (_format == "jsonp") {
+
+                return $http.jsonp(
+                    _jsonPath,
+                    {
+                        method: 'GET',
+                        params: {"callback": "JSON_CALLBACK"},
+                    }
+                );
+
+            } else {
+                //return $http.get(_jsonPath);
+                return $http({
+                    method: 'GET',
+                    url: _jsonPath
+                });
+            }
         };
         return jsonloaderFactory;
     }]);

@@ -13,9 +13,22 @@
     <script src="../src/aping-jsonloader-directive.js"></script>
 </head>
 <body ng-app="app">
+
     <aping
-            type="social"
-            aping-jsonloader="[{'path':'social-items.json'}, {'path':'social-items2.json'}]">
+        type="custom"
+        aping-jsonloader="[{'path':'http://jsonplaceholder.typicode.com/posts/1', 'format':'jsonp'}]">
     </aping>
+    <hr>
+    <aping
+            type="custom"
+            aping-jsonloader="[{'path':'//rawgit.com/JohnnyTheTank/apiNG/master/package.json', 'format':'json'}]">
+    </aping>
+    <hr>
+    <aping
+        type="social"
+        aping-jsonloader="[{'path':'social-items.json'}, {'path':'social-items2.json'}]">
+    </aping>
+
+
 </body>
 </html>
