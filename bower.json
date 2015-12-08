@@ -4,7 +4,7 @@
   "authors": [
     "Jonathan Hornung <jonathan.hornung@gmail.com>"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JSON loader plugin for apiNG",
   "main": "dist/apiNG-plugin-jsonloader.min.js",
   "moduleType": [],
@@ -24,5 +24,8 @@
   ],
   "dependencies": {
     "apiNG": "*"
+  },
+  "resolutions": {
+    "angular-masonry-packed": "~0.14.0"
   }
 }
