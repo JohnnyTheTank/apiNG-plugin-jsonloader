@@ -6,14 +6,27 @@
 
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="../bower_components/apiNG/dist/aping.min.js"></script>
     <script src="aping-config.js"></script>
     <script src="app.js"></script>
     <script src="../src/aping-jsonloader-directive.js"></script>
 </head>
 <body ng-app="app">
-
+    <aping
+            model="native"
+            aping-jsonloader="[{'path':'https://api.500px.com/v1/photos/search?term=fcbayern&consumer_key=SBPqU7SNrTx9331QNjzR5MFnsZTOSgq1bTaHpt7p', 'format':'json'}]">
+    </aping>
+    <hr>
+    <aping
+            model="native"
+            aping-jsonloader="[{'path':'//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=1000&q=https://community.mcafee.com/blogs/feeds/blogs', 'format':'jsonp'}]">
+    </aping>
+    <hr>
+    <aping
+            model="native"
+            aping-jsonloader="[{'path':'https://api.dailymotion.com/user/Bishop-live/videos?fields=bookmarks_total,comments_total,created_time,description,duration,embed_html,id,item_type,media_type,owner.screenname,owner.url,thumbnail_url,title,updated_time,url,', 'format':'json'}]">
+    </aping>
+    <hr>
     <aping
             model="native"
             aping-jsonloader="[{'path':'http://jsonplaceholder.typicode.com/posts/1', 'format':'jsonp'}]">
