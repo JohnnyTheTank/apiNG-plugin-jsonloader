@@ -70,7 +70,7 @@ Every **apiNG plugin** expects an array of **requests** as html attribute.
 |  parameter  | sample | default | description | optional |
 |----------|---------|---------|---------|---------|
 | **`path`** | `data.json` |  | **Valid values:** <br>* JSON files (local)<br>* JSON files (external)<br>* restful JSON urls<br>* restful JSONP urls  | no |
-| **`format`**  | `jsonp` | `json` | Request format |  yes  |
+| **`format`**  | `jsonp` | `json` | Request format (`json` or `jsonp`) |  yes  |
 | **`callback`**  | `JSON_CALLBACK` | `JSON_CALLBACK` | Callback name |  yes  |
 | **`items`**  | `20` | | Items per request (`0`-`n`) |  yes  |
 
