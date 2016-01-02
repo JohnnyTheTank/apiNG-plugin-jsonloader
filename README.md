@@ -25,7 +25,7 @@ You can choose your preferred method of installation:
 ### b) Include files
 Include `apiNG-plugin-jsonloader.min.js` in your apiNG application
 ```html
-<script src="bower_components/apiNG-plugin-jsonloader/dist/apiNG-plugin-jsonloader.min.js"></script>
+<script src="bower_components/apiNG-plugin-jsonloader/dist/aping-plugin-jsonloader.min.js"></script>
 ```
 
 ### c) Add dependencies
