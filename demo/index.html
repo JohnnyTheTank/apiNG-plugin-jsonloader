@@ -12,10 +12,9 @@
     <script src="../src/aping-jsonloader-directive.js"></script>
 </head>
 <body ng-app="app">
-
     <aping
             model="native"
-            aping-jsonloader="[{'path':'//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=1000&q=https://community.mcafee.com/blogs/feeds/blogs', 'format':'jsonp'}]">
+            aping-jsonloader="[{'path':'//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=1000&q=https://community.mcafee.com/blogs/feeds/blogs', 'format':'jsonp', 'callback':'JSON_CALLBACK'}]">
     </aping>
     <hr>
     <aping
@@ -30,7 +29,7 @@
     <hr>
     <aping
             model="native"
-            aping-jsonloader="[{'path':'//rawgit.com/JohnnyTheTank/apiNG/master/package.json', 'format':'json'}]">
+            aping-jsonloader="[{'path':'//rawgit.com/JohnnyTheTank/apiNG/master/bower.json', 'format':'json'}]">
     </aping>
     <hr>
     <aping

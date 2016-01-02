@@ -1,6 +1,6 @@
 {
   "name": "aping-plugin-jsonloader",
-  "version": "0.2.2",
+  "version": "0.6.0",
   "description": "JSON loader plugin for apiNG",
   "main": "Gruntfile.js",
   "scripts": {

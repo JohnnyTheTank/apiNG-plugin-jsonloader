@@ -21,11 +21,24 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
                 requests.forEach(function (request) {
 
                     if (request.path) {
-                        if (!request.format) {
-                            request.format = "json";
+                        //create requestObject for factory function call
+                        var requestObject = {
+                            path: request.path,
+                        };
+
+                        if (request.format && request.format.toLowerCase() != "jsonp") {
+                            requestObject.format = "json";
+                        } else {
+                            requestObject.format = "jsonp";
                         }
 
-                        jsonloaderFactory.getJsonData(request.path, request.format)
+                        if(request.callback) {
+                            requestObject.callback = request.callback;
+                        } else {
+                            requestObject.callback = 'JSON_CALLBACK';
+                        }
+
+                        jsonloaderFactory.getJsonData(requestObject)
                             .success(function (_data) {
                                 var resultArray = [];
 
@@ -53,22 +66,21 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
     }])
     .factory('jsonloaderFactory', ['$http', function ($http) {
         var jsonloaderFactory = {};
-        jsonloaderFactory.getJsonData = function (_jsonPath, _format) {
-            if (_format == "jsonp") {
+        jsonloaderFactory.getJsonData = function (_requestObject) {
+            if (_requestObject.format == "jsonp") {
 
                 return $http.jsonp(
-                    _jsonPath,
+                    _requestObject.path,
                     {
                         method: 'GET',
-                        params: {"callback": "JSON_CALLBACK"},
+                        params: {callback: _requestObject.callback},
                     }
                 );
 
             } else {
-                //return $http.get(_jsonPath);
                 return $http({
                     method: 'GET',
-                    url: _jsonPath
+                    url: _requestObject.path
                 });
             }
         };
