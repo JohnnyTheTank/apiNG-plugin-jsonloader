@@ -23,7 +23,7 @@ You can choose your preferred method of installation:
 * Download from github: [apiNG-plugin-jsonloader.zip](https://github.com/JohnnyTheTank/apiNG-plugin-jsonloader/zipball/master)
 
 ### b) Include files
-Include `apiNG-plugin-jsonloader.min.js` in your apiNG application
+Include `aping-plugin-jsonloader.min.js` in your apiNG application
 ```html
 <script src="bower_components/apiNG-plugin-jsonloader/dist/aping-plugin-jsonloader.min.js"></script>
 ```
