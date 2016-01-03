@@ -14,6 +14,11 @@
 <body ng-app="app">
     <aping
             model="native"
+            aping-jsonloader="[{'path':'https://commons.wikimedia.org/w/api.php?action=query&list=allimages&format=json&aifrom=muenchen', 'format':'jsonp', 'callback':'JSON_CALLBACK'}]">
+    </aping>
+    <hr>
+    <aping
+            model="native"
             aping-jsonloader="[{'path':'//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=1000&q=https://community.mcafee.com/blogs/feeds/blogs', 'format':'jsonp', 'callback':'JSON_CALLBACK'}]">
     </aping>
     <hr>
