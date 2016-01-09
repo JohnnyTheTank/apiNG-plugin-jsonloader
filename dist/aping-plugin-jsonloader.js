@@ -1,3 +1,10 @@
+/**
+    @name: aping-plugin-jsonloader 
+    @version: 0.7.0 (09-01-2016) 
+    @author: Jonathan Hornung 
+    @url: https://github.com/JohnnyTheTank/apiNG-plugin-jsonloader#readme 
+    @license: MIT
+*/
 "use strict";
 
 var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
