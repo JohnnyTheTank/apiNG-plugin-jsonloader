@@ -4,7 +4,7 @@
   "authors": [
     "Jonathan Hornung <jonathan.hornung@gmail.com>"
   ],
-  "version": "0.7.0",
+  "version": "0.7.5",
   "description": "JSON loader plugin for apiNG",
   "main": "dist/aping-plugin-jsonloader.min.js",
   "moduleType": [],

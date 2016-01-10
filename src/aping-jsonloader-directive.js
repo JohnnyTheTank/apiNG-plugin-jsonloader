@@ -9,7 +9,6 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
             link: function (scope, element, attrs, apingController) {
 
                 var appSettings = apingController.getAppSettings();
-
                 var requests = apingUtilityHelper.parseJsonFromAttributes(attrs.apingJsonloader, "jsonloader", appSettings);
 
                 requests.forEach(function (request) {
@@ -35,12 +34,10 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
                         jsonloaderFactory.getJsonData(requestObject)
                             .then(function (_data) {
                                 var resultArray = [];
-
                                 if (_data.data) {
                                     if (_data.data.constructor !== Array) {
                                         resultArray.push(_data.data);
                                     } else {
-
                                         if (request.items < 0) {
                                             resultArray = _data.data;
                                         } else {
@@ -52,7 +49,6 @@ var jjtApingJsonloader = angular.module("jtt_aping_jsonloader", [])
                                         }
                                     }
                                 }
-
                                 apingController.concatToResults(resultArray);
                             });
                     }
