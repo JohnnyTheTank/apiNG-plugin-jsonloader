@@ -4,28 +4,29 @@
 **_apiNG-plugin-jsonloader_** is a [**apiNG**](https://github.com/JohnnyTheTank/apiNG) plugin for loading data from **JSON files** (local & via http) and any **restful JSON** and **JSONP** URLs
 
 # Information
-* **This plugin supports every apiNG model**
+* **This plugin supports every apiNG model (no data transformation)**
 
 # Documentation
-    I.  INSTALLATION
-    II. USAGE
 
-## I. INSTALLATION
-    a) Get file
-    b) Include file
-    c) Add dependencies
-    d) Add the plugin
+1. [INSTALLATION](#1-installation)
+    1. Get file
+    2. Include file
+    3. Add dependencies
+    4. Add plugin
+2. [USAGE](#2-usage)
+    1. Models
+    2. Requests
 
-### a) Get file
-You can choose your preferred method of installation:
+## 1. INSTALLATION
 
+### I. Get file
 Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/) or downloaded files:
 
 * `bower install apiNG-plugin-jsonloader --save`
 * `npm install aping-plugin-jsonloader --save`
 * download [apiNG-plugin-jsonloader.zip](https://github.com/JohnnyTheTank/apiNG-plugin-jsonloader/zipball/master)
 
-### b) Include file
+### II. Include file
 Include `aping-plugin-jsonloader.min.js` in your apiNG application
 
 ```html
@@ -39,14 +40,14 @@ Include `aping-plugin-jsonloader.min.js` in your apiNG application
 <script src="aping-plugin-jsonloader.min.js"></script>
 ```
 
-### c) Add dependencies
+### III. Add dependencies
 Add the module `jtt_aping_jsonloader` as a dependency to your app module:
 ```js
 var app = angular.module('app', ['jtt_aping', 'jtt_aping_jsonloader']);
 ```
 
-### d) Add the plugin
-Add the plugin's directive `aping-jsonloader="[]"` to your apiNG directive and configure your requests (_**II. USAGE**_)
+### IV. Add the plugin
+Add the plugin's directive `aping-jsonloader="[]"` to your apiNG directive and [configure your requests](#ii-requests)
 ```html
 <aping
     template-url="templates/event.html"
@@ -56,19 +57,12 @@ Add the plugin's directive `aping-jsonloader="[]"` to your apiNG directive and c
 </aping>
 ```
 
-## II. USAGE
-    a) Models
-    b) Requests
+## 2. USAGE
 
-### a) Models
+### I. Models
 This plugin supports **every apiNG model**
 
-|  model   | content |
-|----------|---------|
-| `native` | **any kind of data** |
-
-
-### b) Requests
+### II. Requests
 Every **apiNG plugin** expects an array of **requests** as html attribute.
 
 **Supported Sources**
